@@ -36,7 +36,7 @@ while q:
         break
     if node not in path:
         path.append(node)
-    for n in t[node]:
+    for n in t.get(node, []):
         if n not in [qi[0] for qi in q] and n not in been:
             q.append((n, path))
 if x:

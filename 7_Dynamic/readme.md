@@ -1,6 +1,6 @@
 # Contest 7
 
-https://open.kattis.com/contests/pe4egm
+https://open.kattis.com/contests/pmwidt
 
 Problems solved: I J M N O
 

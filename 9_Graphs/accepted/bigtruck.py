@@ -30,7 +30,6 @@ for _ in range(m):
     a, b, d = [int(x) for x in input().split()]
     # Remove 1, because the input starts at 1 not 0
     mtx[a-1][b-1] = d
-    mtx[b-1][a-1] = d
 
 
 # Initialize dijkstra costs to get to each city, starts with all infinity

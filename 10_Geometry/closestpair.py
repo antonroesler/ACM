@@ -17,7 +17,8 @@ class Point:
 
 
 class Rectangle:
-    """A class to represent a recatangle, where x and y are the center points. w ist the wisth and h the height."""
+    """A class to represent a rectangle, where x and y are the center points. 
+    w ist the width and h the height."""
     def __init__(self, x, y, w, h):
         self.x = x
         self.y = y
@@ -26,7 +27,8 @@ class Rectangle:
 
     def contains(self, point:Point):
         """Returns True if the given point lies within the rectangle."""
-        return (self.x - self.w/2 <= point.x <= self.x + self.w/2 and self.y - self.h/2 <= point.y <= self.y + self.h/2)
+        return (self.x - self.w/2 <= point.x <= self.x + self.w/2 \
+            and self.y - self.h/2 <= point.y <= self.y + self.h/2)
 
     def intersects(self, other):
         """Returns True if the rectangle overlaps with a given other rectangle."""
@@ -63,15 +65,7 @@ class Circle:
 
     def center(self):
         return Point(self.x, self.y)
-'''
-    def intersects(self, rectangle:Rectangle):
-        """Returns true if the circle overlaps with the given rectangle."""
-        # If a corner is with in the circle, they overlap
-        for corner in rectangle.corners():
-            if self.contains(corner):
-                return True
-        # Other option to overlap: The circle is within the rectangle
-'''
+
 
 class QuadTree:
     def __init__(self, area:Rectangle, capacity:int=4):
@@ -103,11 +97,6 @@ class QuadTree:
         self.sub_tree.append(QuadTree(Rectangle(self.area.x - self.area.w/4 , self.area.y + self.area.h/4, self.area.w/2, self.area.h/2)))
         self.sub_tree.append(QuadTree(Rectangle(self.area.x - self.area.w/4 , self.area.y - self.area.h/4, self.area.w/2, self.area.h/2)))
         self.divided = True
-        """
-        for point in self.points: # Insert the existing points to the appropriate subtree
-            self.insert(point)
-        self.points = []
-        """
 
     def query(self, area:Rectangle):
         """Returns all points that lie within a given area. It may return points that lie not within the area, but every point in the area is definitely."""

@@ -30,7 +30,5 @@ int main(void) {
         last = name[i];
     }
     
-    
-
     return 0;
 }
